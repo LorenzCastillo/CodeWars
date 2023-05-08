@@ -17,14 +17,14 @@ class testCase {
     }
 }
 
-class test {
+class tester {
     constructor() {
         this.array = [];
     }
 
     insert(filePath, expectedResult, actualResult) {
-        const testItem = new testCase(filePath, expectedResult, actualResult);
-        this.array.push(testItem);
+        const test = new testCase(filePath, expectedResult, actualResult);
+        this.array.push(test);
     }
 
     run() {
@@ -33,6 +33,7 @@ class test {
     
             console.log(colors.green, "Testing: " + this.array[i].filePath.toString());
             console.log(colors.yellow, "Expected Result: " + this.array[i].expectedResult);
+            
             if (this.array[i].expectedResult === this.array[i].actualResult) {
                 console.log(colors.green, "Actual Result: " + this.array[i].actualResult);
             } else {
@@ -43,4 +44,4 @@ class test {
     }
 }
 
-module.exports = test;
+module.exports = tester;

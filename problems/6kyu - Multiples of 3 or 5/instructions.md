@@ -1,111 +1,42 @@
-# Problem #13: [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) (Java)
+# [Multiples of 3 or 5](https://www.codewars.com/kata/514b92a657cdc65150000006) (JavaScript)
 
 ---
 
-### Difficulty - Easy
+### 6 Kyu
 
-Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
-```
-Symbol       Value
-I             1
-V             5
-X             10
-L             50
-C             100
-D             500
-M             1000
-```
+Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in. Additionally, if the number is negative, return 0 (for languages that do have them).
 
-For example, `2` is written as `II` in Roman numeral, just two ones added together. `12` is written as `XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.
-
-Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:
-
-- `I` can be placed before `V` (5) and `X` (10) to make 4 and 9.
-- `X` can be placed before `L` (50) and `C` (100) to make 40 and 90.
-- `C` can be placed before `D` (500) and `M` (1000) to make 400 and 900.
-
-Given a roman numeral, convert it to an integer.
-
-**Example 1:**
-
-```
-Input: s = "III"
-Output: 3
-Explanation: III = 3.
-```
-
-**Example 2:**
-
-```
-Input: s = "LVIII"
-Output: 58
-Explanation: L = 50, V= 5, III = 3.
-```
-
-**Example 3:**
-
-```
-Input: s = "MCMXCIV"
-Output: 1994
-Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
-```
-
-**Constraints**
-
-- `1 <= s.length <= 15`
-- `s` contains only the characters `('I', 'V', 'X', 'L', 'C', 'D', 'M')`.
-- It is **guaranteed** that `s` is a valid roman numeral in the range `[1, 3999]`.
+Note: If the number is a multiple of both 3 and 5, only count it once.
 
 ---
 
 ## Solution
 
 ```
-import java.util.HashMap;
-import java.util.Map;
-
-public class Problem13 {
-    public static void main(String[] args) {
-        String num = "MCMXCIV";
-        System.out.println(romanToInt(num));
+function solution(number){
+  let arr = [];
+  
+  for (let i = 1; i < number; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      arr.push(i);
+      continue;
     }
-
-    public static int romanToInt(String s) {
-        Map<String, Integer> map = new HashMap<String, Integer>();
-        String x1, x2;
-        int sum = 0, i = 0;
-
-        map.put("I", 1);
-        map.put("V", 5);
-        map.put("X", 10);
-        map.put("L", 50);
-        map.put("C", 100);
-        map.put("D", 500);
-        map.put("M", 1000);
-
-        map.put("IV", 4);
-        map.put("IX", 9);
-        map.put("XL", 40);
-        map.put("XC", 90);
-        map.put("CD", 400);
-        map.put("CM", 900);
-
-        while (i < s.length()) {
-            x1 = Character.toString(s.charAt(i));
-            if (i != s.length() - 1) {
-                x2 = Character.toString(s.charAt(i+1));
-
-                if (map.containsKey(x1 + x2)) {
-                    sum += map.get(x1 + x2);
-                    i += 2;
-                    continue;
-                }
-            }
-            sum += map.get(x1);
-            i++;
-        }
-        return sum;
+    if (i % 3 == 0) {
+      arr.push(i);
+      continue;
     }
+    if (i % 5 == 0) {
+      arr.push(i);
+      continue;
+    }
+  }
+  
+  let total = arr.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue
+  }, 0)
+  
+  return total;
 }
 ```
