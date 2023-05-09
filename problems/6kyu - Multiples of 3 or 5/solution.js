@@ -1,5 +1,5 @@
-const tester = require("../../testCase.js");
-const test = new tester();
+const UnitTest = require("../../test/unitTest.js");
+const Test = new UnitTest();
 
 function solution(number){
   let arr = [];
@@ -26,9 +26,10 @@ function solution(number){
   return total;
 }
 
+// -------------------------------
 // console.log(solution(10));
 // console.log(solution(50));
 
-// -------------------------------
-test.run(__filename, 23, solution(10));
-test.run(__filename, 543, solution(50));
+Test.insert(__filename, 23, solution(10));
+Test.insert(__filename, 543, solution(50));
+Test.run()
