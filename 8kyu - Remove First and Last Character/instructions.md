@@ -15,9 +15,7 @@ It's pretty straightforward. Your goal is to create a function that removes the 
 #include <iostream>
 #include <vector>
 
-using namespace std; 
-
-string sliceString (string str)
+std::string sliceString(std::string str)
 {
   int size = str.length();
   

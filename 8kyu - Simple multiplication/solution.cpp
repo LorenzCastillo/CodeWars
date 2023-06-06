@@ -1,23 +1,17 @@
+#include <string>
 #include <iostream>
 #include <vector>
 
-std::vector<int> invert(std::vector<int> values)
-{
-  std::vector<int> invertedValues = {};
-  
-  for (int i = 0; i < values.size(); i++) {
-    invertedValues.push_back(values[i] * -1);
-
-    std::cout << invertedValues[i] << std::endl;
-  };
-  
-  return invertedValues;
+int simpleMultiplication(int a){
+  // If it's even
+  if (a % 2 == 0) return a * 8;
+  // Otherwize...
+  return a * 9;
 }
 
 int main() {
-  std::vector<int> test = {1, -2, 3, -4, 5};
-  
-  invert(test);
+  int test = 5;
+  std::cout << simpleMultiplication(test);
 
   return 0;
 }

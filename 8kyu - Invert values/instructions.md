@@ -1,32 +1,44 @@
-# [Simple multiplication](https://www.codewars.com/kata/583710ccaa6717322c000105) (C++)
+# [Invert values](https://www.codewars.com/kata/5899dc03bc95b1bf1b0000ad) (C++)
 
 ---
 
 ### 8 Kyu
 
-This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+**Example(s)**
+
+```
+invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+invert([]) == []
+```
 
 ---
 
 ## Solution
 
 ```
-#include <string>
 #include <iostream>
 #include <vector>
 
-using namespace std; 
+std::vector<int> invert(std::vector<int> values)
+{
+  std::vector<int> invertedValues = {};
+  
+  for (int i = 0; i < values.size(); i++) {
+    invertedValues.push_back(values[i] * -1);
 
-int simpleMultiplication(int a){
-  // If it's even
-  if (a % 2 == 0) return a * 8;
-  // Otherwize...
-  return a * 9;
+    std::cout << invertedValues[i] << std::endl;
+  };
+  
+  return invertedValues;
 }
 
 int main() {
-  int test = 5;
-  std::cout << simpleMultiplication(test);
+  std::vector<int> test = {1, -2, 3, -4, 5};
+  
+  invert(test);
 
   return 0;
 }
