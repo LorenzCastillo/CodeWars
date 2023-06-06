@@ -4,7 +4,7 @@
 
 using namespace std; 
 
-string sliceString (string str)
+string sliceString(string str)
 {
   int size = str.length();
   
