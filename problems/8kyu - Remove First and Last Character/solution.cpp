@@ -2,9 +2,7 @@
 #include <iostream>
 #include <vector>
 
-using namespace std; 
-
-string sliceString(string str)
+std::string sliceString(std::string str)
 {
   int size = str.length();
   
