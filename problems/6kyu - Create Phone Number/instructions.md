@@ -1,4 +1,4 @@
-# [Create Phone Number](https://www.codewars.com/kata/525f50e3b73515a6db000b83/cpp) (C++)
+# [Create Phone Number](https://www.codewars.com/kata/525f50e3b73515a6db000b83) (C++)
 
 ---
 
@@ -37,5 +37,12 @@ std::string createPhoneNumber(const int arr [10]){
   }
   
   return phoneNumber;
+}
+
+int main() {
+  int testArr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+  std::cout << createPhoneNumber(testArr);
+
+  return 0;
 }
 ```
