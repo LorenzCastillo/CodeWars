@@ -18,8 +18,8 @@ std::string createPhoneNumber(const int arr [10]){
 }
 
 int main() {
-  int testArr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
-  std::cout << createPhoneNumber(testArr);
+  int test[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+  std::cout << createPhoneNumber(test);
 
   return 0;
 }

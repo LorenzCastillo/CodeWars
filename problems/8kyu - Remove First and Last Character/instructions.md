@@ -1,4 +1,4 @@
-# [Remove First and Last Character](https://www.codewars.com/kata/525f50e3b73515a6db000b83/cpp) (C++)
+# [Remove First and Last Character](https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0) (C++)
 
 ---
 
