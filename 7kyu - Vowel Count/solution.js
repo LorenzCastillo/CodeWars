@@ -1,5 +1,4 @@
 function getCount(str) {
-  
   let count = 0;
   
   str.split("").map((letter) => {
