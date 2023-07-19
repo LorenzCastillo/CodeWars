@@ -16,7 +16,6 @@ The input string will only consist of lower case letters and/or spaces.
 
 ```
 function getCount(str) {
-  
   let count = 0;
   
   str.split("").map((letter) => {
