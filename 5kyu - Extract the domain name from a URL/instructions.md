@@ -1,4 +1,4 @@
-# [Extract the domain name from a URL](https://www.codewars.com/kata/5208f99aee097e6552000148/javascript) (JavaScript)
+# [Extract the domain name from a URL](https://www.codewars.com/kata/514a024011ea4fb54200004b/javascript) (JavaScript)
 
 ---
 
